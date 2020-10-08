@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="5_6.html" />
+    
     
     <link rel="prev" href="5_4.html" />
     
@@ -438,6 +440,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.1.5.6" data-path="5_6.html">
+            
+                <a href="5_6.html">
+            
+                    
+                    5.6 Derive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.7" data-path="5_7.html">
+            
+                <a href="5_7.html">
+            
+                    
+                    5.7 trait别名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.8" data-path="5_8.mu">
+            
+                <span>
+            
+                    
+                    5.8 标准库常见trait
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" >
+            
+                <span>
+            
+                    
+                    第六章：数组和字符串
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../CHP6/6_1.html">
+            
+                <a href="../CHP6/6_1.html">
+            
+                    
+                    6.1 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="../CHP6/6_2.html">
+            
+                <a href="../CHP6/6_2.html">
+            
+                    
+                    6.2 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -494,6 +580,34 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="trait&#x7684;&#x7EA6;&#x675F;&#x548C;&#x7EE7;&#x627F;">trait&#x7684;&#x7EA6;&#x675F;&#x548C;&#x7EE7;&#x627F;</h1>
+<p>trait&#x8FD8;&#x53EF;&#x7528;&#x4F5C;&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::fmt::Debug;
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">my_print</span></span>&lt;T: Debug&gt;(x: T) {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{:?}&quot;</span>, x);
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#x8981;&#x6C42;T&#x5FC5;&#x987B;&#x662F;&#x5B9E;&#x73B0;&#x4E86;Debug trait&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x62A5;&#x9519;&#x3002;</p>
+<hr>
+<p>&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">my_print</span></span>&lt;T&gt;(x: T) <span class="hljs-keyword">where</span> T: Debug {
+    ...
+}
+</code></pre>
+<p>&#x4F46;&#x5728;&#x7A0D;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6CDB;&#x578B;&#x7EA6;&#x675F;&#x53EA;&#x6709;where&#x5B50;&#x53E5;&#x53EF;&#x4EE5;&#x8868;&#x8FBE;&#xFF0C;&#x8BE6;&#x89C1;21&#x7AE0;&#x3002;</p>
+<hr>
+<p>trait&#x5141;&#x8BB8;&#x7EE7;&#x627F;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Base</span></span> {...}
+<span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Derived</span></span>: Base {...}
+</code></pre>
+<p>&#x8FD9;&#x8868;&#x793A;trait Derived&#x7EE7;&#x627F;&#x4E86;Base&#xFF0C;&#x8868;&#x8FBE;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x6EE1;&#x8DB3;Derived&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5FC5;&#x7136;&#x4E5F;&#x6EE1;&#x8DB3;Base&#x3002;<strong>&#x6240;&#x4EE5;&#x5728;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x7C7B;&#x578B;impl Derived&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x540C;&#x65F6;impl Base, &#x5426;&#x5219;&#x62A5;&#x9519;&#xFF1A;</strong></p>
+<pre><code class="lang-rust"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Base</span></span> {}
+<span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Derived</span></span>: Base {}
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">T</span></span>;
+<span class="hljs-keyword">impl</span> Derived <span class="hljs-keyword">for</span> T {}
+<span class="hljs-keyword">impl</span> Base <span class="hljs-keyword">for</span> T {}
+</code></pre>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x7F16;&#x8BD1;&#x671F;&#x773C;&#x91CC;&#xFF0C;<code>trait Derived: Base {}</code> &#x7B49;&#x540C; <code>trait Derived where Self: Base {}</code>,&#x65E0;&#x672C;&#x8D28;&#x533A;&#x522B;&#xFF0C;&#x5373;&#x7ED9;Derived&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7EA6;&#x675F;&#xFF0C;&#x5373;&#x5B9E;&#x73B0;Derived trait&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;trait Base&#x7684;&#x7EA6;&#x675F;&#x3002;</p>
 
                                 
                                 </section>
@@ -521,10 +635,14 @@
 
             
                 
-                <a href="5_4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.4 完整函数调用语法">
+                <a href="5_4.html" class="navigation navigation-prev " aria-label="Previous page: 5.4 完整函数调用语法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="5_6.html" class="navigation navigation-next " aria-label="Next page: 5.6 Derive">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -533,7 +651,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.5 trait约束和继承","level":"1.1.5.5","depth":3,"previous":{"title":"5.4 完整函数调用语法","level":"1.1.5.4","depth":3,"path":"CHP5/5_4.md","ref":"CHP5/5_4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP5/5_5.md","mtime":"2020-10-04T07:27:27.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-04T07:32:59.003Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.5 trait约束和继承","level":"1.1.5.5","depth":3,"next":{"title":"5.6 Derive","level":"1.1.5.6","depth":3,"path":"CHP5/5_6.md","ref":"CHP5/5_6.md","articles":[]},"previous":{"title":"5.4 完整函数调用语法","level":"1.1.5.4","depth":3,"path":"CHP5/5_4.md","ref":"CHP5/5_4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP5/5_5.md","mtime":"2020-10-04T12:16:15.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-07T01:35:08.441Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -541,10 +659,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

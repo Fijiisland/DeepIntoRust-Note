@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.5 函数递归调用 · GitBook</title>
+        <title>6.2 字符串 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="4_4.html" />
+    <link rel="prev" href="6_1.html" />
     
 
     </head>
@@ -289,9 +289,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.4.1" data-path="4_1.html">
+        <li class="chapter " data-level="1.1.4.1" data-path="../CHP4/4_1.html">
             
-                <a href="4_1.html">
+                <a href="../CHP4/4_1.html">
             
                     
                     4.1 简介
@@ -302,9 +302,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4.2" data-path="4_2.html">
+        <li class="chapter " data-level="1.1.4.2" data-path="../CHP4/4_2.html">
             
-                <a href="4_2.html">
+                <a href="../CHP4/4_2.html">
             
                     
                     4.2 发散函数
@@ -315,9 +315,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4.3" data-path="4_3.html">
+        <li class="chapter " data-level="1.1.4.3" data-path="../CHP4/4_3.html">
             
-                <a href="4_3.html">
+                <a href="../CHP4/4_3.html">
             
                     
                     4.3 main函数
@@ -328,9 +328,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4.4" data-path="4_4.html">
+        <li class="chapter " data-level="1.1.4.4" data-path="../CHP4/4_4.html">
             
-                <a href="4_4.html">
+                <a href="../CHP4/4_4.html">
             
                     
                     4.4 const fn
@@ -341,9 +341,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.4.5" data-path="4_5.html">
+        <li class="chapter " data-level="1.1.4.5" data-path="../CHP4/4_5.html">
             
-                <a href="4_5.html">
+                <a href="../CHP4/4_5.html">
             
                     
                     4.5 函数递归调用
@@ -496,9 +496,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.6.1" data-path="../CHP6/6_1.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="6_1.html">
             
-                <a href="../CHP6/6_1.html">
+                <a href="6_1.html">
             
                     
                     6.1 数组
@@ -509,9 +509,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="../CHP6/6_2.html">
+        <li class="chapter active" data-level="1.1.6.2" data-path="6_2.html">
             
-                <a href="../CHP6/6_2.html">
+                <a href="6_2.html">
             
                     
                     6.2 字符串
@@ -562,7 +562,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >4.5 函数递归调用</a>
+        <a href=".." >6.2 字符串</a>
     </h1>
 </div>
 
@@ -577,16 +577,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x51FD;&#x6570;&#x9012;&#x5F52;&#x8C03;&#x7528;">&#x51FD;&#x6570;&#x9012;&#x5F52;&#x8C03;&#x7528;</h1>
-<p>Rust&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x9012;&#x5F52;&#x8C03;&#x7528;&#xFF1A;</p>
-<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fib</span></span>(index: <span class="hljs-keyword">i32</span>) -&gt; <span class="hljs-keyword">u64</span> {
-    <span class="hljs-keyword">if</span> index == <span class="hljs-number">1</span> || index == <span class="hljs-number">2</span> {
-        <span class="hljs-number">1</span>
-    } <span class="hljs-keyword">else</span> {
-        fib(index - <span class="hljs-number">1</span>) + fib(index - <span class="hljs-number">2</span>)
-    }
+                                <h1 id="&#x5B57;&#x7B26;&#x4E32;">&#x5B57;&#x7B26;&#x4E32;</h1>
+<h3 id="str">&amp;str</h3>
+<p>str&#x662F;Rust&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#xFF0C;&amp;str&#x662F;&#x5BF9;str&#x7684;borrow&#x3002;Rust&#x5BF9;str&#x91C7;&#x7528;utf8&#x7F16;&#x7801;&#xFF0C;&#x5185;&#x7F6E;&#x7684;char&#x7C7B;&#x578B;&#x662F;4&#x5B57;&#x8282;&#x957F;&#x5EA6;&#xFF0C;&#x4F46;&#x5B57;&#x7B26;&#x4E32;str&#x4E0D;&#x80FD;&#x89C6;&#x4E3A;char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x66F4;&#x63A5;&#x8FD1;u8&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#xFF0C;str&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;<code>fn as_ptr(&amp;self) -&gt; *const u8</code>&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x4EC5;&#x505A;&#x4E86;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#xFF1A;<code>self as *const str as *const u8</code>&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x6709;&#x4E00;&#x4E2A;&#x7F3A;&#x70B9;&#xFF0C;&#x5373;&#x4E0D;&#x652F;&#x6301;O(1)&#x590D;&#x6742;&#x5EA6;&#x7684;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x7528;<code>s[n]</code>&#x83B7;&#x53D6;&#x7B2C;n&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8981;&#x8FD9;&#x4E48;&#x5199;&#xFF1A;</p>
+<p><code>s.chars().nth(n)</code></p>
+<p>&#x5176;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)</p>
+<hr>
+<p>str&#x662F;DST&#x7C7B;&#x578B;&#xFF0C;&amp;str&#x5373;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;slice&#xFF0C;&#x5373;&#x80D6;&#x6307;&#x9488;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> greeting: &amp;<span class="hljs-keyword">str</span> = <span class="hljs-string">&quot;Hello&quot;</span>;
+<span class="hljs-keyword">let</span> substr: &amp;<span class="hljs-keyword">str</span> = &amp;greeting[<span class="hljs-number">2</span>..];
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x8BC1;&#x660E;&amp;str&#x662F;&#x4E00;&#x4E2A;&#x80D6;&#x6307;&#x9488;</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Size of pointer: {}&quot;</span>, std::mem::size_of::&lt;*<span class="hljs-keyword">const</span> ()&gt;());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Size of &amp;str: {}&quot;</span>, std::mem::size_of::&lt;&amp;<span class="hljs-keyword">str</span>&gt;());
 }
 </code></pre>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-rust">Size of pointer: <span class="hljs-number">8</span>
+Size of &amp;<span class="hljs-keyword">str</span>: <span class="hljs-number">16</span>
+</code></pre>
+<p>&amp;str&#x5185;&#x90E8;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5B57;&#x7B26;&#x4E32;&#x5934;&#x90E8;&#x7684;&#x6307;&#x9488;&#x548C;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;Rust&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540C;C/C++&#x4E0D;&#x540C;&#xFF0C;C/C++&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&apos;\0&apos;&#x7ED3;&#x5C3E;&#xFF0C;&#x800C;Rust&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x95F4;&#x53EF;&#x4EE5;&#x5305;&#x542B;&apos;\0&apos;&#x3002;</p>
+<h3 id="622-string">6.2.2 String</h3>
+<p>String&#x7C7B;&#x578B;&#x76F8;&#x6BD4;&amp;str&#xFF0C;&#x5177;&#x6709;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x6743;&#x5229;&#xFF0C;&amp;str&#x662F;&#x5BF9;&#x4E00;&#x5757;&#x5B57;&#x7B26;&#x4E32;&#x533A;&#x95F4;&#x7684;&#x501F;&#x7528;&#xFF0C;&#x5B83;&#x5BF9;&#x6240;&#x6307;&#x5411;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x65E0;&#x6240;&#x6709;&#x6743;&#xFF0C;&#x54EA;&#x6015;&#x662F;&amp;mut str&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> greeting: &amp;<span class="hljs-keyword">str</span> = <span class="hljs-string">&quot;Hello&quot;</span>;
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5BF9;&#x6B64;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#xFF0C;&#x4F46;String&#x53EF;&#x4EE5;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> a = <span class="hljs-built_in">String</span>::from(<span class="hljs-string">&quot;Hello&quot;</span>);
+s.push(<span class="hljs-string">&apos; &apos;</span>);
+s.push_str(<span class="hljs-string">&quot;world.&quot;</span>);
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x7531;&#x4E8E;String&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x4E8E;std::Vec<u8>&#xFF0C;&#x6709;&#x6743;&#x5BF9;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</u8></p>
+<p>String&#x5B9E;&#x73B0;&#x4E86;Deref<target=str> trait&#xFF0C;&#x6240;&#x4EE5;&amp;String&#x53EF;&#x88AB;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A;&amp;str&#x7C7B;&#x578B;&#xFF0C;&#x5173;&#x4E8E;Deref&#x5728;&#x540E;&#x6587;&#x63D0;&#x5230;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x793A;&#x4F8B;&#xFF1A;</target=str></p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">capitalize</span></span>(substr: &amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">str</span>) {
+    substr.make_ascii_uppercase();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = <span class="hljs-built_in">String</span>::from(<span class="hljs-string">&quot;Hello World&quot;</span>);
+    capitalize(&amp;<span class="hljs-keyword">mut</span> s);
+}
+</code></pre>
+<p>&amp;mut s&#x7684;&#x7C7B;&#x578B;&#x4E3A;&amp;mut String,&#x51FD;&#x6570;&#x5F62;&#x53C2;&#x4E3A;&amp;mut str&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x8FD9;&#x91CC;&#x505A;&#x4E86;&#x81EA;&#x52A8;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;&#x5728;&#x6B64;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x5176;&#x6709;&#x6743;&#x4FEE;&#x6539;substr&#x6307;&#x5411;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F46;&#x65E0;&#x6743;&#x5BF9;&#x5176;&#x5F53;&#x524D;&#x6307;&#x5411;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x6216;&#x91CA;&#x653E;&#x3002;</p>
 
                                 
                                 </section>
@@ -614,7 +647,7 @@
 
             
                 
-                <a href="4_4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 4.4 const fn">
+                <a href="6_1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6.1 数组">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -626,7 +659,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.5 函数递归调用","level":"1.1.4.5","depth":3,"next":{"title":"第五章：trait","level":"1.1.5","depth":2,"ref":"","articles":[{"title":"5.1 成员方法","level":"1.1.5.1","depth":3,"path":"CHP5/5_1.md","ref":"CHP5/5_1.md","articles":[]},{"title":"5.2 静态方法","level":"1.1.5.2","depth":3,"path":"CHP5/5_2.md","ref":"CHP5/5_2.md","articles":[]},{"title":"5.3 扩展方法","level":"1.1.5.3","depth":3,"path":"CHP5/5_3.md","ref":"CHP5/5_3.md","articles":[]},{"title":"5.4 完整函数调用语法","level":"1.1.5.4","depth":3,"path":"CHP5/5_4.md","ref":"CHP5/5_4.md","articles":[]},{"title":"5.5 trait约束和继承","level":"1.1.5.5","depth":3,"path":"CHP5/5_5.md","ref":"CHP5/5_5.md","articles":[]},{"title":"5.6 Derive","level":"1.1.5.6","depth":3,"path":"CHP5/5_6.md","ref":"CHP5/5_6.md","articles":[]},{"title":"5.7 trait别名","level":"1.1.5.7","depth":3,"path":"CHP5/5_7.md","ref":"CHP5/5_7.md","articles":[]},{"title":"5.8 标准库常见trait","level":"1.1.5.8","depth":3,"path":"CHP5/5_8.mu","ref":"CHP5/5_8.mu","articles":[]}]},"previous":{"title":"4.4 const fn","level":"1.1.4.4","depth":3,"path":"CHP4/4_4.md","ref":"CHP4/4_4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP4/4_5.md","mtime":"2020-09-28T11:14:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-07T01:35:08.441Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.2 字符串","level":"1.1.6.2","depth":3,"previous":{"title":"6.1 数组","level":"1.1.6.1","depth":3,"path":"CHP6/6_1.md","ref":"CHP6/6_1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP6/6_2.md","mtime":"2020-10-07T01:33:49.006Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-07T01:35:08.441Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
