@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.4 完整函数调用语法 · GitBook</title>
+        <title>8.1 代数类型系统 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,6 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="5_5.html" />
-    
-    
-    <link rel="prev" href="5_3.html" />
     
 
     </head>
@@ -375,9 +371,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="5_1.html">
+        <li class="chapter " data-level="1.1.5.1" data-path="../CHP5/5_1.html">
             
-                <a href="5_1.html">
+                <a href="../CHP5/5_1.html">
             
                     
                     5.1 成员方法
@@ -388,9 +384,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="5_2.html">
+        <li class="chapter " data-level="1.1.5.2" data-path="../CHP5/5_2.html">
             
-                <a href="5_2.html">
+                <a href="../CHP5/5_2.html">
             
                     
                     5.2 静态方法
@@ -401,9 +397,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.3" data-path="5_3.html">
+        <li class="chapter " data-level="1.1.5.3" data-path="../CHP5/5_3.html">
             
-                <a href="5_3.html">
+                <a href="../CHP5/5_3.html">
             
                     
                     5.3 扩展方法
@@ -414,9 +410,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.5.4" data-path="5_4.html">
+        <li class="chapter " data-level="1.1.5.4" data-path="../CHP5/5_4.html">
             
-                <a href="5_4.html">
+                <a href="../CHP5/5_4.html">
             
                     
                     5.4 完整函数调用语法
@@ -427,9 +423,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.5" data-path="5_5.html">
+        <li class="chapter " data-level="1.1.5.5" data-path="../CHP5/5_5.html">
             
-                <a href="5_5.html">
+                <a href="../CHP5/5_5.html">
             
                     
                     5.5 trait约束和继承
@@ -440,9 +436,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.6" data-path="5_6.html">
+        <li class="chapter " data-level="1.1.5.6" data-path="../CHP5/5_6.html">
             
-                <a href="5_6.html">
+                <a href="../CHP5/5_6.html">
             
                     
                     5.6 Derive
@@ -453,9 +449,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.7" data-path="5_7.html">
+        <li class="chapter " data-level="1.1.5.7" data-path="../CHP5/5_7.html">
             
-                <a href="5_7.html">
+                <a href="../CHP5/5_7.html">
             
                     
                     5.7 trait别名
@@ -466,7 +462,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.8" data-path="5_8.mu">
+        <li class="chapter " data-level="1.1.5.8" data-path="../CHP5/5_8.mu">
             
                 <span>
             
@@ -614,9 +610,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.8.1" data-path="../CHP8/8_1.html">
+        <li class="chapter active" data-level="1.1.8.1" data-path="8_1.html">
             
-                <a href="../CHP8/8_1.html">
+                <a href="8_1.html">
             
                     
                     8.1 代数类型系统
@@ -841,7 +837,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >5.4 完整函数调用语法</a>
+        <a href=".." >8.1 代数类型系统</a>
     </h1>
 </div>
 
@@ -856,35 +852,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B8C;&#x6574;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8BED;&#x6CD5;">&#x5B8C;&#x6574;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8BED;&#x6CD5;</h1>
-<p>Fully Qualified Syntax&#x63D0;&#x4F9B;&#x65E0;&#x6B67;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8BED;&#x6CD5;&#xFF0C;&#x4E5F;&#x79F0;UFCS(universal function  call syntax)&#xFF0C;&#x5177;&#x4F53;&#x5199;&#x6CD5;&#xFF1A;<code>&lt;T as TraitName&gt;::item</code>&#x3002;</p>
-<pre><code class="lang-rust"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Cook</span></span> {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">start</span></span>(&amp;<span class="hljs-keyword">self</span>);
-}
-<span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Wash</span></span> {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">start</span></span>(&amp;<span class="hljs-keyword">self</span>);
-}
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Chef</span></span>;
-
-<span class="hljs-keyword">impl</span> Cook <span class="hljs-keyword">for</span> Chef {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">start</span></span>(&amp;<span class="hljs-keyword">self</span>) { println(<span class="hljs-string">&quot;Cook::start&quot;</span>); }
-}
-
-<span class="hljs-keyword">impl</span> Wash <span class="hljs-keyword">for</span> Chef {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">start</span></span>(&amp;<span class="hljs-keyword">self</span>) { println(<span class="hljs-string">&quot;Wash::start&quot;</span>); }
-}
-
-<span class="hljs-keyword">let</span> me = Chef;
-<span class="hljs-comment">// &#x6709;&#x6B67;&#x4E49;</span>
-me.start();
-</code></pre>
-<p>&#x6B64;&#x65F6;&#x53EF;&#x7528;FQS&#x8BED;&#x6CD5;&#x6765;&#x5199;&#xFF1A;</p>
-<pre><code class="lang-rust"><span class="hljs-keyword">let</span> me = Chef;
-&lt;Cook&gt;::start(&amp;me);
-&lt;Chef <span class="hljs-keyword">as</span> Wash&gt;::start(&amp;me); <span class="hljs-comment">// Better.</span>
-</code></pre>
-<p>&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x7684;&lt;&gt;&#x91CC;&#x7684;&#x5373;&#x4E3A;&#x53C2;&#x6570;self&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x901A;&#x8FC7;&#x53D8;&#x91CF;&#x540D;&#x52A0;&#x5C0F;&#x6570;&#x70B9;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8C03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x540E;&#x8005;&#x4F1A;&#x66F4;&#x7F8E;&#x89C2;&#x3002;</p>
-<p>&#x6CE8;&#x610F;&#xFF0C;&#x901A;&#x8FC7;&#x5C0F;&#x6570;&#x70B9;&#x8BED;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x53D6;&#x5F15;&#x7528;&#x6B65;&#x9AA4;&#xFF0C;&#x867D;&#x7136;&#x4EE3;&#x7801;&#x662F;<code>me.start()</code>&#xFF0C;&#x4F46;&#x522B;&#x5FD8;&#x4E86;start&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x53C2;&#x4E3A;&amp;me&#x800C;&#x4E0D;&#x662F;me&#xFF0C;&#x8FD9;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7684;&#x3002;&#x4F46;&#x82E5;&#x7528;FQS&#x6765;&#x5199;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x66FF;&#x6211;&#x4EEC;&#x53D6;&#x5F15;&#x7528;&#x4E86;&#xFF0C;&#x5C31;&#x5F97;&#x5199;&#x6210;start(&amp;me)&#x3002;</p>
+                                <h1 id="&#x4EE3;&#x6570;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;">&#x4EE3;&#x6570;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</h1>
+<p>Rust&#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x4EE3;&#x6570;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;(Algebraic data type)&#xFF0C;&#x5728;&#x6570;&#x5B66;&#x4E0A;&#x6709;&#x4E25;&#x683C;&#x5B9A;&#x4E49;&#x3002; </p>
 
                                 
                                 </section>
@@ -912,14 +881,6 @@ me.start();
 
             
                 
-                <a href="5_3.html" class="navigation navigation-prev " aria-label="Previous page: 5.3 扩展方法">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="5_5.html" class="navigation navigation-next " aria-label="Next page: 5.5 trait约束和继承">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -928,7 +889,7 @@ me.start();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.4 完整函数调用语法","level":"1.1.5.4","depth":3,"next":{"title":"5.5 trait约束和继承","level":"1.1.5.5","depth":3,"path":"CHP5/5_5.md","ref":"CHP5/5_5.md","articles":[]},"previous":{"title":"5.3 扩展方法","level":"1.1.5.3","depth":3,"path":"CHP5/5_3.md","ref":"CHP5/5_3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP5/5_4.md","mtime":"2020-10-04T07:27:05.005Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T11:39:21.156Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.1 代数类型系统","level":"1.1.8.1","depth":3,"next":{"title":"第九章：宏(不推荐阅读)","level":"1.1.9","depth":2,"ref":"","articles":[{"title":"9.1 简介marco","level":"1.1.9.1","depth":3,"path":"CHP9/9_1.md","ref":"CHP9/9_1.md","articles":[]}]},"previous":{"title":"第八章：深入类型系统","level":"1.1.8","depth":2,"ref":"","articles":[{"title":"8.1 代数类型系统","level":"1.1.8.1","depth":3,"path":"CHP8/8_1.md","ref":"CHP8/8_1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CHP8/8_1.md","mtime":"2020-10-08T11:43:08.045Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T11:39:21.156Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
